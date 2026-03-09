@@ -1,26 +1,91 @@
-@import "tailwindcss";
+/* Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Light Mode Colors */
+body {
+  @apply bg-white text-black dark:bg-black dark:text-white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Background with Gradient for Light Mode */
+.bg-hero {
+  background-image:
+    radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.2), transparent 55%),
+    radial-gradient(900px 500px at 90% 20%, rgba(16,185,129,0.2), transparent 55%),
+    radial-gradient(1000px 600px at 40% 90%, rgba(236,72,153,0.1), transparent 55%),
+    linear-gradient(to bottom, rgba(0,0,0,0.05), transparent 30%),
+    linear-gradient(to right, rgba(0,0,0,0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.07) 1px, transparent 1px);
+  background-size: auto, auto, auto, auto, 80px 80px, 80px 80px;
+  background-attachment: fixed;
+}
+
+/* Keyframe Animation for Background */
+@keyframes animateBackground {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 200% 200%, 50% 50%, 100% 100%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Dark Mode Colors */
+html.dark .bg-hero {
+  background-image:
+    radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.3), transparent 55%),
+    radial-gradient(900px 500px at 90% 20%, rgba(16,185,129,0.3), transparent 55%),
+    radial-gradient(1000px 600px at 40% 90%, rgba(236,72,153,0.2), transparent 55%),
+    linear-gradient(to bottom, rgba(255,255,255,0.1), transparent 30%),
+    linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: auto, auto, auto, auto, 80px 80px, 80px 80px;
+  background-attachment: fixed;
+}
+
+/* Glass effect for sections (glassmorphism) */
+.glass {
+  @apply bg-white/70 dark:bg-zinc-900/55 backdrop-blur-xl border border-zinc-200/60 dark:border-zinc-800/70;
+}
+
+/* Button Styles with enhanced visibility */
+button {
+  @apply bg-teal-500 text-black hover:bg-teal-600 transition-colors rounded-lg px-6 py-2;
+}
+
+/* Text Shadow for Better Visibility */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(23, 20, 20, 0.6);
+}
+
+/* Enhanced Text Contrast */
+.text-high-contrast {
+  color: #f0f0f0;  /* Lighter text color */
+}
+
+/* Icon Color for Better Visibility */
+.icon-color {
+  color: #0e100f; /* Green color for icons */
+}
+
+.icon-color-dark {
+  color: #ff63b3; /* Pink color for dark mode */
+}
+
+/* Adjusted color for bio text to make it visible */
+.bio-text {
+  color: #ffffff; /* White text for bio for better contrast */
 }
