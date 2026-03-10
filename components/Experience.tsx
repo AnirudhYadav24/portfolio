@@ -11,7 +11,7 @@ export default function Experience() {
     <Section
       id="experience"
       title="Experience"
-      subtitle="Real-world development exposure with MERN and API integration."
+      subtitle="Real-world development exposure with Frontend, Backend, API and Database integration."
     >
       <motion.div
         initial={{ opacity: 0, y: 10 }}

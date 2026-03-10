@@ -9,7 +9,7 @@ export default function Achievements() {
     <Section
       id="achievements"
       title="Achievements & Leadership"
-      subtitle="Signals teamwork, responsibility, and communication — important for recruiters."
+      subtitle="Signals teamwork, responsibility, and communication."
     >
       <motion.div
         initial={{ opacity: 0, y: 10 }}
