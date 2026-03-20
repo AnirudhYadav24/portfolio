@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Certifications() {
   return (
-    <Section id="certifications" title="Certifications" subtitle="Relevant certifications that support your profile.">
+    <Section id="certifications" title="Certifications" subtitle="Relevant certifications .">
       <div className="grid gap-4 md:grid-cols-2">
         {portfolioData.certifications.map((c, idx) => (
           <motion.div

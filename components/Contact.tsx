@@ -46,7 +46,7 @@ export default function Contact() {
           </div>
 
           <p className="mt-6 text-sm text-zinc-600 dark:text-zinc-400">
-            Tip: Add a professional email signature and keep your GitHub pinned repos updated.
+            
           </p>
         </motion.div>
 
